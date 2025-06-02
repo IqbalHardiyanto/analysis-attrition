@@ -9,11 +9,11 @@ Perusahaan edutech **Jaya Jaya Maju** bergerak di bidang pendidikan berbasis tek
 #### Permasalahan Bisnis
 
 1. **Tingkat Attrition Tinggi:** Karyawan mengalami attrition, terutama di departemen R&D dan Sales.
-2. **Ketidakpuasan Lingkungan Kerja:** Karyawan melaporkan EnvironmentSatisfaction rendah (skor 1).
-3. **Work-Life Balance Buruk:** Karyawan memiliki WorkLifeBalance ≤2 (skala 4), terutama yang sering business travel.
-4. **Stagnasi Karir:** Karyawan dengan masa kerja >3 tahun tidak pernah dipromosikan (YearsSinceLastPromotion=0).
+2. **Ketidakpuasan Lingkungan Kerja:** Karyawan melaporkan kepuasan lingkungan rendah (skor 1).
+3. **Work-Life Balance Buruk:** Karyawan memberi ulasan kurang dari 2 (skala 4), terutama yang sering business travel.
+4. **Stagnasi Karir:** Karyawan dengan masa kerja lebih 3 tahun tidak pernah dipromosikan.
 5. **Ketimpangan Kompensasi:** Kesenjangan pendapatan bulanan (MonthlyIncome) mencapai 300% antara level junior dan senior.
-6. **Beban Kerja Tidak Seimbang:** Karyawan rutin lembur (OverTime=Yes), terutama di Sales.
+6. **Beban Kerja Tidak Seimbang:** Karyawan sering lembur terutama di Sales.
 
 ---
 
@@ -31,20 +31,37 @@ Perusahaan edutech **Jaya Jaya Maju** bergerak di bidang pendidikan berbasis tek
 
 #### Persiapan
 
-Sumber data: ....
+Sumber data: terdapat pada folder "model"
 
-Setup environment:
+Setup environment anaconda / miniconda:
 
 ```
-- conda create --name main-andata
-- conda activate main-andata
+- conda create --name main-attrition
+- conda activate main-attrition
 - pip install streamlit
 - pip install seaborn pandas matplotlib numpy os
 - pip install pipreqs
+```
 
+Setup environment - Shell/Terminal:
+
+```
+- mkdir analysis-attrition
+- cd analysis-attrition
+- pipenv install
+- pipenv shell
+- pip install seaborn pandas matplotlib numpy os
+- pip install -r requirements.txt
+```
+
+Run Streamlit App
+
+```
 - cd analysis-attrition
 - streamlit run app.py
 ```
+
+link demo aplikasi attrition employee [Streamlit app](https://analysis-attrition-fvjimsfbcynw44559cnpxs.streamlit.app/)
 
 ---
 
