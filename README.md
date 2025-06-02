@@ -79,7 +79,7 @@ Jelaskan tentang business dashboard yang telah dibuat. Jika ada, sertakan juga l
 
 ##### 🚀 **Segera Implementasi**
 
-- **Program "Flexi-Work"**Berikan WFH 2 hari/minggu untuk karyawan dengan DistanceFromHome >10 km (terdampak 34% karyawan).
+- **Program "Flexi-Work"** Berikan WFH 2 hari/minggu untuk karyawan dengan DistanceFromHome >10 km (terdampak 34% karyawan).
 - **Penyesuaian Kompensasi**Naikkan gaji 10–15% untuk peran kritis di R&D dengan MonthlyIncome <$5000 (17% karyawan).
 - **Career Path Transparan**
   Buat kebijakan promosi wajib tiap 2 tahun (tertarget ke 31% karyawan stagnan).
