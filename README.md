@@ -6,7 +6,7 @@ Perusahaan edutech **Jaya Jaya Maju** bergerak di bidang pendidikan berbasis tek
 
 ---
 
-### Permasalahan Bisnis
+#### Permasalahan Bisnis
 
 1. **Tingkat Attrition Tinggi:** Karyawan mengalami attrition, terutama di departemen R&D dan Sales.
 2. **Ketidakpuasan Lingkungan Kerja:** Karyawan melaporkan EnvironmentSatisfaction rendah (skor 1).
@@ -17,7 +17,7 @@ Perusahaan edutech **Jaya Jaya Maju** bergerak di bidang pendidikan berbasis tek
 
 ---
 
-### Cakupan Proyek
+#### Cakupan Proyek
 
 | Area Analisis              | Metodologi                                                       | Output Target                         |
 | -------------------------- | ---------------------------------------------------------------- | ------------------------------------- |
@@ -29,14 +29,21 @@ Perusahaan edutech **Jaya Jaya Maju** bergerak di bidang pendidikan berbasis tek
 
 ---
 
-### Persiapan
+#### Persiapan
 
 Sumber data: ....
 
 Setup environment:
 
 ```
+- conda create --name main-andata
+- conda activate main-andata
+- pip install streamlit
+- pip install seaborn pandas matplotlib numpy os
+- pip install pipreqs
 
+- cd analysis-attrition
+- streamlit run app.py
 ```
 
 ---
@@ -49,33 +56,42 @@ Jelaskan tentang business dashboard yang telah dibuat. Jika ada, sertakan juga l
 
 ## Conclusion
 
-Jelaskan konklusi dari proyek yang dikerjakan.
+#### 🔑 **5 Faktor Utama Penyebab Attrition**
+
+1. **Lingkungan kerja tidak memuaskan** (EnvironmentSatisfaction rendah)
+2. **Work-life balance buruk** (terutama pada karyawan yang sering _business travel_)
+3. **Stagnasi karir** (karyawan >3 tahun tidak pernah dipromosikan)
+4. **Kesenjangan kompensasi** (selisih gaji junior-senior hingga 300%)
+5. **Beban kerja berlebihan** (lembur kronis di departemen Sales)
+
+#### 📊 **Temuan Kritis dari Analisis Data**
+
+- **Departemen paling terdampak**: R&D dan Sales
+- **Karyawan berisiko tinggi**:
+  - Skor EnvironmentSatisfaction = 1
+  - WorkLifeBalance ≤ 2
+  - YearsSinceLastPromotion = 0 meski masa kerja >3 tahun
+- **Prediksi akurat**: Model ML (Random Forest) mencapai **akurasi >80%** dalam identifikasi karyawan berpotensi resign
 
 ---
 
-### Rekomendasi Action Items
+## Rekomendasi Action Items
 
-#### 🚀 **Segera Implementasi (Quick Wins)**
+##### 🚀 **Segera Implementasi**
 
 - **Program "Flexi-Work"**Berikan WFH 2 hari/minggu untuk karyawan dengan DistanceFromHome >10 km (terdampak 34% karyawan).
 - **Penyesuaian Kompensasi**Naikkan gaji 10–15% untuk peran kritis di R&D dengan MonthlyIncome <$5000 (17% karyawan).
 - **Career Path Transparan**
   Buat kebijakan promosi wajib tiap 2 tahun (tertarget ke 31% karyawan stagnan).
 
-#### 📈 **Strategi Jangka Menengah**
+##### 📈 **Strategi Jangka Menengah**
 
 - **Redesign Peran Sales**Kurangi beban kerja non-essential (misal: administrasi) untuk tim Sales yang OverTime >20%.
 - **Wellness Program**Luncurkan subsidi konseling & fitness tracker untuk karyawan WorkLifeBalance ≤2.
 - **Skill Development**
   Berikan sertifikasi tech/edtech gratis bagi karyawan dengan TrainingTimesLastYear <2.
 
-#### 🔍 **Inisiatif Berbasis Data**
-
-- **Sistem Early Warning Attrition**Bangun dashboard real-time dengan parameter:`EnvironmentSatisfaction <2, JobInvolvement <3, YearsSinceLastPromotion >3`.
-- **"Stay Interview"**
-  Wawancara rutin dengan karyawan berisiko tinggi (output model prediktif).
-
-#### 💡 **Strategi Inovatif**
+##### 💡 **Strategi Inovatif**
 
 - **Equity untuk Talent Kritis**Tawarkan opsi saham perusahaan untuk karyawan R&D dengan TotalWorkingYears >5.
 - **Kolaborasi Edu-Content**
