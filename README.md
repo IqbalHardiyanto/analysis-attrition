@@ -31,7 +31,7 @@ Perusahaan edutech **Jaya Jaya Maju** bergerak di bidang pendidikan berbasis tek
 
 #### Persiapan
 
-Sumber data: terdapat pada folder "model"
+Sumber data: employee_data.csv
 
 Setup environment anaconda / miniconda:
 
@@ -61,13 +61,70 @@ Run Streamlit App
 - streamlit run app.py
 ```
 
-link demo aplikasi attrition employee [Streamlit app](https://analysis-attrition-fvjimsfbcynw44559cnpxs.streamlit.app/)
+Link demo aplikasi attrition employee [Streamlit app](https://analysis-attrition-fvjimsfbcynw44559cnpxs.streamlit.app/)
 
 ---
 
 ## Business Dashboard
 
-Jelaskan tentang business dashboard yang telah dibuat. Jika ada, sertakan juga link untuk mengakses dashboard tersebut.
+Business Dashboard [HR - Attrition Employee Analysis](https://public.tableau.com/views/HR-AttritionEmployeeAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+Dashboard ini menyajikan analisis komprehensif tentang attrittion karyawan (pengunduran diri) untuk membantu HR dan manajemen mengidentifikasi pola, risiko, serta wawasan yang dapat ditindaklanjuti.
+Berikut rincian komponen dan implikasi bisnisnya:
+
+1. Ringkasan Karyawan:
+
+   - Total Karyawan: 1.058
+   - Bertahan: 879 (83%)
+   - Mengundurkan Diri: 179 (17%)
+   - Tingkat Attrition: 16,9%
+   - Insight: Hampir 1 dari 6 karyawan mengundurkan diri, menandakan perlunya strategi retensi.
+
+2. Analisis Gaji per Departemen
+   Membandingkan gaji rata-rata karyawan yang resign vs bertahan:
+
+   - Human Resources (HR):
+
+     - Resign: $2.717,09 | Bertahan: $2.717,09
+     - Tidak ada kesenjangan gaji; attrition kemungkinan dipicu faktor non-moneter.
+
+   - R&D:
+
+     - Resign: $2.074,14 | Bertahan: $2.097,14
+     - Gaji sedikit lebih rendah pada karyawan yang resign.
+
+   - Sales:
+     - Resign: $1.625,37 | Bertahan: $1.625,3
+     - Tidak ada kesenjangan gaji; attrition mungkin disebabkan masalah lain.
+
+3. Attrition per Departemen
+   Attrition Tertinggi: HR (30,2%).
+   Tingkat attrition R&D dan Sales tidak ditampilkan secara eksplisit, tetapi lebih rendah dari HR.
+   Tindakan: Selidiki praktik HR (beban kerja, perkembangan karier, durasi jam perhari, dan lain-lain).
+
+4. Work Life Balanced
+   Status Attrition: Terbagi antara "Tidak" (bertahan) dan "Ya" (resign).
+   Implikasi: Work Life Balanced yang buruk berkorelasi dengan resignasi (umum di departemen attrition tinggi seperti HR).
+
+**Wawasan Bisnis & Rekomendasi**
+
+1.  Krisis Departemen HR:
+    Attrition 30,2% memerlukan intervensi mendesak (misal tinjau ulang beban kerja, pelatihan manajer).
+
+2.  Gaji Bukan Faktor Utama:
+    Tidak ada kesenjangan gaji signifikan di HR/Sales; fokus pada faktor non-moneter (keterlibatan, fleksibilitas).
+
+3.  Sasarkan Kelompok Berisiko Tinggi:
+    Karyawan berusia 25–34 tahun dan masa kerja awal (0–5 tahun) membutuhkan pengembangan karier dan promosi.
+
+4.  Strategi Spesifik per Peran:
+    Atasi turnover peran Lab Technician/Sales lewat program mentor atau peningkatan keterampilan.
+
+5.  Mempercepat Promosi:
+    Akselerasi promosi untuk kinerja tinggi guna mempertahankan talenta.
+
+6.  Keseimbangan Kerja-Hidup:
+    Terapkan kebijakan seperti jam kerja fleksibel (khususnya di peran bertekanan tinggi).
 
 ---
 
@@ -86,9 +143,9 @@ Jelaskan tentang business dashboard yang telah dibuat. Jika ada, sertakan juga l
 - **Departemen paling terdampak**: R&D dan Sales
 - **Karyawan berisiko tinggi**:
   - Skor EnvironmentSatisfaction = 1
-  - WorkLifeBalance ≤ 2
-  - YearsSinceLastPromotion = 0 meski masa kerja >3 tahun
-- **Prediksi akurat**: Model ML (Random Forest) mencapai **akurasi >80%** dalam identifikasi karyawan berpotensi resign
+  - Skor WorkLifeBalance kurang dari 2
+  - YearsSinceLastPromotion = 0 meski masa kerja lebih dari 3 tahun
+- **Prediksi akurat**: Model ML (Random Forest) mencapai **akurasi 80%** dalam identifikasi karyawan berpotensi resign
 
 ---
 
@@ -96,17 +153,17 @@ Jelaskan tentang business dashboard yang telah dibuat. Jika ada, sertakan juga l
 
 ##### 🚀 **Segera Implementasi**
 
-- **Program "Flexi-Work"** Berikan WFH 2 hari/minggu untuk karyawan dengan DistanceFromHome >10 km (terdampak 34% karyawan).
-- **Penyesuaian Kompensasi**Naikkan gaji 10–15% untuk peran kritis di R&D dengan MonthlyIncome <$5000 (17% karyawan).
+- **Program "Flexi-Work"** Berikan WFH 2 hari/minggu untuk karyawan dengan DistanceFromHome jarak lebih 10 km (terdampak 34% karyawan).
+- **Penyesuaian Kompensasi**Naikkan gaji 10–15% untuk peran kritis di R&D dengan MonthlyIncome kurang dari $5000 (17% karyawan).
 - **Career Path Transparan**
   Buat kebijakan promosi wajib tiap 2 tahun (tertarget ke 31% karyawan stagnan).
 
 ##### 📈 **Strategi Jangka Menengah**
 
-- **Redesign Peran Sales**Kurangi beban kerja non-essential (misal: administrasi) untuk tim Sales yang OverTime >20%.
-- **Wellness Program**Luncurkan subsidi konseling & fitness tracker untuk karyawan WorkLifeBalance ≤2.
+- **Redesign Peran Sales**Kurangi beban kerja non-essential (misal: administrasi) untuk tim Sales yang OverTime lebih 20%.
+- **Wellness Program**Luncurkan subsidi konseling & fitness tracker untuk karyawan WorkLifeBalance kurang dari 2.
 - **Skill Development**
-  Berikan sertifikasi tech/edtech gratis bagi karyawan dengan TrainingTimesLastYear <2.
+  Berikan sertifikasi tech/edtech gratis bagi karyawan dengan masa pelatihan kurang 2 tahun.
 
 ##### 💡 **Strategi Inovatif**
 
